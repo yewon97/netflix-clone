@@ -4,23 +4,31 @@ import HomeScreen from './screens/HomeScreen';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginScreen from './screens/LoginScreen';
 import { auth } from './firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
 
 function App() {
-  const user = null; /* 로그인 안했을 때 */
-  // const user = { /* 로그인 했을 때 */ name: 'sunny' };
+  const user = useSelector(selectUser); /* 로그인 안했을 때 */
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubscrible = auth.onAuthStateChanged(userAuth => {
-      if(userAuth) {
+    const unsubscrible = auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
         // Logged in
-        console.log(userAuth);
+        dispatch(
+          login({
+            uid: userAuth.uid,
+            email: userAuth.email,
+          })
+        );
       } else {
         // Logged out
+        dispatch(logout);
       }
     });
 
     return unsubscrible;
-  }, [])
+  }, []);
 
   return (
     <div className="app">
