@@ -37,6 +37,7 @@ function App() {
           <LoginScreen />
         ) : (
           <Routes>
+            <Route path="/profile" element={<ProfileScreen />} />
             <Route path="/" exact element={<HomeScreen />} /> {/* exact prop는 경로를 정확히 매칭하고자 */}
           </Routes>
         )}
