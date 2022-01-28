@@ -8,7 +8,7 @@ function App() {
     <div className="app">
     <Router>
       <Routes>
-        <Route path="/" element={<HomeScreen />} />
+        <Route path="/" exact element={<HomeScreen />} /> {/* exact prop는 경로를 정확히 매칭하고자 */}
         <Route path="/test" element={<h1>hi</h1>} />
       </Routes>
     </Router>
