@@ -13,9 +13,3 @@ const requests = {
 };
 
 export default requests;
-
-// https://api.themoviedb.org/3/discover/movie?api_key=bbb324b1d89697a0681e2adb0982399a&with_genres=99
-// https://api.themoviedb.org/3/discover/movie?api_key=bbb324b1d89697a0681e2adb0982399a&with_genres=35
-// https://api.themoviedb.org/3/discover/movie?api_key=bbb324b1d89697a0681e2adb0982399a&with_genres=27
-// https://api.themoviedb.org/3/discover/movie?api_key=bbb324b1d89697a0681e2adb0982399a&with_genres=10749
-// https://api.themoviedb.org/3/genre/movie/list?api_key=bbb324b1d89697a0681e2adb0982399a
